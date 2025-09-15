@@ -13,13 +13,11 @@ import {
   Crown,
   Star,
   Phone,
-  Mail,
   Calendar,
   Zap,
   Shield,
   Headphones
 } from "lucide-react";
-import Link from "next/link";
 import { WebsiteHeader } from "@/components/layout/WebsiteHeader";
 import { WebsiteFooter } from "@/components/layout/WebsiteFooter";
 

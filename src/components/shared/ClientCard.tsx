@@ -1,6 +1,5 @@
 "use client";
 
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { MessageSquare, Video } from "lucide-react";
@@ -19,11 +18,6 @@ export function ClientCard({
   onJoinMeeting,
   showActions = true,
 }: ClientCardProps) {
-  const initials = client.name
-    .split(" ")
-    .map((name) => name[0])
-    .join("");
-
   return (
     <div className="mb-3 rounded-xl border border-border bg-card p-3">
       <div className="flex items-center justify-between">

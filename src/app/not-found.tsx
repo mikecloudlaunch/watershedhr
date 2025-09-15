@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Home, Search, ArrowLeft } from 'lucide-react';
+import { Home, ArrowLeft } from 'lucide-react';
 import { WebsiteHeader } from '@/components/layout/WebsiteHeader';
 import { WebsiteFooter } from '@/components/layout/WebsiteFooter';
 
@@ -35,7 +35,7 @@ export default function NotFound() {
               Page Not Found
             </h2>
             <p className="text-xl text-muted-foreground max-w-md mx-auto">
-              The page you're looking for doesn't exist or has been moved to a new location.
+              The page you&apos;re looking for doesn&apos;t exist or has been moved to a new location.
             </p>
           </div>
 

@@ -30,7 +30,7 @@ export default function GlobalError({
                 Something went wrong!
               </h1>
               <p className="text-lg text-muted-foreground">
-                We're experiencing technical difficulties. Our team has been notified and is working on a fix.
+                We&apos;re experiencing technical difficulties. Our team has been notified and is working on a fix.
               </p>
             </div>
 

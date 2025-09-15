@@ -16,7 +16,6 @@ import {
   Mail,
   Phone,
   Building,
-  MapPin,
   Calendar,
   Clock,
   Globe,
@@ -47,18 +46,18 @@ export function UserProfile({
     onToggleEdit?.();
   };
 
-  const handleInputChange = (field: string, value: any) => {
+  const handleInputChange = (field: string, value: string | boolean) => {
     setFormData((prev) => ({
       ...prev,
       [field]: value,
     }));
   };
 
-  const handleNestedChange = (parent: string, field: string, value: any) => {
+  const handleNestedChange = (parent: string, field: string, value: string | boolean) => {
     setFormData((prev) => ({
       ...prev,
       [parent]: {
-        ...(prev[parent as keyof UserProfileType] as Record<string, any>),
+        ...(prev[parent as keyof UserProfileType] as Record<string, string | boolean>),
         [field]: value,
       },
     }));

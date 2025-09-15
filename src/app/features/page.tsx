@@ -444,7 +444,7 @@ export default function FeaturesPage() {
 
           <div className="text-center mt-12">
             <p className="text-muted-foreground mb-6">
-              Can't find your integration? We offer custom API development and enterprise integration services.
+              Can&apos;t find your integration? We offer custom API development and enterprise integration services.
             </p>
             <Link href="/integrations">
               <Button className="btn-primary-watershed">

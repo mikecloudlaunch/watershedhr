@@ -11,14 +11,9 @@ import {
   ArrowRight, 
   User, 
   BookOpen, 
-  TrendingUp,
-  Shield,
-  Users,
-  FileText,
   Search,
   Filter
 } from "lucide-react";
-import Link from "next/link";
 import { WebsiteHeader } from "@/components/layout/WebsiteHeader";
 import { WebsiteFooter } from "@/components/layout/WebsiteFooter";
 

@@ -63,7 +63,7 @@ const DefaultErrorFallback: React.FC<{ error?: Error; reset: () => void }> = ({
             Oops! Something went wrong
           </h1>
           <p className="text-muted-foreground">
-            We encountered an unexpected error. Don't worry, we're on it!
+            We encountered an unexpected error. Don&apos;t worry, we&apos;re on it!
           </p>
         </div>
 

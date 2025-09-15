@@ -10,7 +10,7 @@ interface MeetingSummaryCardProps {
   onOpen?: () => void;
 }
 
-export function MeetingSummaryCard({ summary, onOpen }: MeetingSummaryCardProps) {
+export function MeetingSummaryCard({ summary }: MeetingSummaryCardProps) {
   return (
     <div className="rounded-2xl border border-border bg-card p-4">
       <div className="flex items-center justify-between">

@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { LoadingSpinner, ButtonLoading } from "@/components/ui/LoadingSpinner";
+import { LoadingSpinner } from "@/components/ui/LoadingSpinner";
 import { useToast } from "@/components/ui/Toast";
 import { 
   Mail, 
@@ -181,7 +181,7 @@ export default function ContactPage() {
         addToast({
           type: 'success',
           title: 'Message Sent Successfully!',
-          description: 'We\'ll get back to you within 24 hours.'
+          description: 'We&apos;ll get back to you within 24 hours.'
         });
         
         // Reset form
@@ -197,7 +197,7 @@ export default function ContactPage() {
       } else {
         throw new Error('Failed to send message');
       }
-    } catch (error) {
+    } catch {
       addToast({
         type: 'error',
         title: 'Failed to Send Message',
@@ -232,7 +232,7 @@ export default function ContactPage() {
             Get in Touch
           </Badge>
           <h1 className="text-4xl sm:text-6xl font-bold text-foreground">
-            We're Here to
+            We&apos;re Here to
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500">
               {" "}Help
             </span>
@@ -301,7 +301,7 @@ export default function ContactPage() {
                   <CheckCircle className="h-16 w-16 text-green-500 mx-auto" />
                   <h3 className="text-xl font-semibold text-foreground">Thank You!</h3>
                   <p className="text-muted-foreground">
-                    Your message has been sent successfully. We'll get back to you soon.
+                    Your message has been sent successfully. We&apos;ll get back to you soon.
                   </p>
                   <Button 
                     onClick={() => setIsSubmitted(false)}
@@ -566,7 +566,7 @@ export default function ContactPage() {
               <h2 className="text-3xl font-bold text-foreground mb-4">Our Offices</h2>
               <p className="text-xl text-muted-foreground mb-6">
                 Visit us at any of our locations across Australia. Our team is ready to meet 
-                with you to discuss your super fund's specific requirements and how our marketplace 
+                with you to discuss your super fund&apos;s specific requirements and how our marketplace 
                 platform can help achieve RIC compliance.
               </p>
               <div className="flex items-center gap-4 text-sm text-muted-foreground">

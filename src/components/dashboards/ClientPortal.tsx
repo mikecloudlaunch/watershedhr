@@ -10,8 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { mockClients } from "@/data/mockData";
 
 export function ClientPortal() {
-  // For demo purposes, we'll use the first client as the current user
-  const currentClient = mockClients[0];
+  // For demo purposes, we'll get client data dynamically
   const adviser = {
     name: "John Smith",
     speciality: "Retirement Planning",
