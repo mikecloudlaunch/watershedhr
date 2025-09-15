@@ -1,26 +1,264 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --radius: 0.625rem;
+  
+  /* Watershed HR Dark Theme - Black & Yellow Branding */
+  --background: hsl(0, 0%, 8%);           /* Very dark gray/black background */
+  --foreground: hsl(0, 0%, 95%);          /* Near white text */
+  
+  --card: hsl(0, 0%, 12%);                /* Dark gray cards */
+  --card-foreground: hsl(0, 0%, 95%);     /* Light text on cards */
+  
+  --popover: hsl(0, 0%, 10%);             /* Dark popover background */
+  --popover-foreground: hsl(0, 0%, 95%);  /* Light popover text */
+  
+  --primary: hsl(51, 100%, 50%);          /* Bright yellow - Watershed brand primary */
+  --primary-foreground: hsl(0, 0%, 8%);   /* Dark text on yellow - IMPORTANT for contrast */
+  
+  --secondary: hsl(0, 0%, 18%);           /* Medium dark gray */
+  --secondary-foreground: hsl(0, 0%, 90%); /* Light text on secondary */
+  
+  --muted: hsl(0, 0%, 15%);               /* Muted dark background */
+  --muted-foreground: hsl(0, 0%, 65%);    /* Muted light text */
+  
+  --accent: hsl(45, 100%, 60%);           /* Softer yellow accent */
+  --accent-foreground: hsl(0, 0%, 8%);    /* Dark text on accent */
+  
+  --destructive: hsl(0, 85%, 60%);        /* Red for destructive actions */
+  --destructive-foreground: hsl(0, 0%, 95%); /* Light text on destructive */
+  
+  --border: hsl(0, 0%, 20%);              /* Border color */
+  --input: hsl(0, 0%, 16%);               /* Input background */
+  --ring: hsl(51, 100%, 50%);             /* Focus ring - brand yellow */
+  
+  /* Chart colors with yellow theme */
+  --chart-1: hsl(51, 100%, 50%);          /* Primary yellow */
+  --chart-2: hsl(45, 90%, 60%);           /* Golden yellow */
+  --chart-3: hsl(39, 85%, 65%);           /* Amber */
+  --chart-4: hsl(33, 80%, 70%);           /* Orange-yellow */
+  --chart-5: hsl(27, 75%, 75%);           /* Light orange */
+  
+  /* Sidebar colors */
+  --sidebar: hsl(0, 0%, 10%);             /* Dark sidebar */
+  --sidebar-foreground: hsl(0, 0%, 90%);  /* Light sidebar text */
+  --sidebar-primary: hsl(51, 100%, 50%);  /* Yellow sidebar accents */
+  --sidebar-primary-foreground: hsl(0, 0%, 8%); /* Dark text on yellow */
+  --sidebar-accent: hsl(0, 0%, 16%);      /* Sidebar accent background */
+  --sidebar-accent-foreground: hsl(0, 0%, 90%); /* Sidebar accent text */
+  --sidebar-border: hsl(0, 0%, 18%);      /* Sidebar borders */
+  --sidebar-ring: hsl(51, 100%, 50%);     /* Sidebar focus ring */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  html {
+    /* Enable smooth scrolling for same-page navigation */
+    scroll-behavior: smooth;
+    background: hsl(0, 0%, 8%) !important;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    /* Force dark mode permanently */
+    background: hsl(0, 0%, 8%) !important;
+    color: hsl(0, 0%, 95%) !important;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Watershed HR Custom Branding Utilities */
+  .watershed-brand-bg {
+    background: linear-gradient(135deg, hsl(51, 100%, 50%) 0%, hsl(45, 90%, 60%) 100%);
+    color: hsl(0, 0%, 8%);
+  }
+  
+  .watershed-accent-glow {
+    box-shadow: 0 0 20px hsla(51, 100%, 50%, 0.3);
+  }
+  
+  .watershed-border-glow {
+    border: 1px solid hsl(51, 100%, 50%);
+    box-shadow: 0 0 10px hsla(51, 100%, 50%, 0.2);
+  }
+  
+  /* Enhanced Progress Bar for Yellow Theme */
+  .progress-yellow {
+    background: hsl(51, 100%, 50%);
+  }
+  
+  /* Custom Badge Styles for Better Contrast */
+  .badge-yellow {
+    background: hsl(51, 100%, 50%) !important;
+    color: hsl(0, 0%, 8%) !important;
+    font-weight: 600;
+    border: none !important;
+  }
+  
+  /* Override any conflicting badge styles */
+  .badge-yellow * {
+    color: hsl(0, 0%, 8%) !important;
+  }
+  
+  .badge-dark {
+    background: hsl(0, 0%, 18%);
+    color: hsl(0, 0%, 85%);
+    border: 1px solid hsl(0, 0%, 25%);
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px hsla(0, 0%, 0%, 0.3);
+  }
+  
+  /* Fix input styling for dark theme */
+  input[type="text"], input[type="email"], input[type="password"], textarea {
+    background: hsl(0, 0%, 16%) !important;
+    border: 1px solid hsl(0, 0%, 20%) !important;
+    color: hsl(0, 0%, 95%) !important;
+  }
+  
+  input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus {
+    border-color: hsl(51, 100%, 50%) !important;
+    box-shadow: 0 0 0 2px hsla(51, 100%, 50%, 0.2) !important;
+  }
+  
+  input::placeholder, textarea::placeholder {
+    color: hsl(0, 0%, 65%) !important;
+  }
+  
+  /* Chat bubble styling for better prominence */
+  .chat-bubble-client {
+    background: hsl(0, 0%, 20%) !important;
+    color: hsl(0, 0%, 95%) !important;
+    border: 1px solid hsl(0, 0%, 25%);
+    box-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.3);
+  }
+  
+  .chat-bubble-user {
+    background: linear-gradient(135deg, hsl(51, 100%, 50%) 0%, hsl(45, 90%, 60%) 100%) !important;
+    color: hsl(0, 0%, 8%) !important;
+    font-weight: 500;
+    box-shadow: 0 2px 6px hsla(51, 100%, 50%, 0.3);
+  }
+
+  /* Custom button hover states for Watershed HR theme */
+  .btn-primary-watershed {
+    background: linear-gradient(135deg, hsl(51, 100%, 50%) 0%, hsl(45, 90%, 60%) 100%) !important;
+    color: hsl(0, 0%, 8%) !important;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .btn-primary-watershed:hover {
+    background: linear-gradient(135deg, hsl(51, 100%, 45%) 0%, hsl(45, 90%, 55%) 100%) !important;
+    color: hsl(0, 0%, 8%) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px hsla(51, 100%, 50%, 0.4);
+  }
+
+  .btn-outline-watershed {
+    border: 1px solid hsl(var(--border));
+    background: transparent;
+    color: hsl(var(--foreground));
+    transition: all 0.2s ease-in-out;
+  }
+
+  .btn-outline-watershed:hover {
+    background: linear-gradient(135deg, hsl(51, 100%, 50%) 0%, hsl(45, 90%, 60%) 100%) !important;
+    color: hsl(0, 0%, 8%) !important;
+    border-color: hsl(51, 100%, 50%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px hsla(51, 100%, 50%, 0.3);
+  }
+
+  .btn-ghost-watershed {
+    background: transparent !important;
+    color: hsl(var(--foreground)) !important;
+    border: none !important;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .btn-ghost-watershed:hover {
+    background: hsla(51, 100%, 50%, 0.1) !important;
+    color: hsl(51, 100%, 60%) !important;
+    transform: translateY(-1px);
+  }
+  
+  /* Enhanced shadow utilities */
+  .shadow-3xl {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Enhanced interaction states */
+  .hover-lift {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Staggered animation delays for children */
+  .stagger-children > * {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .stagger-children > *:nth-child(1) { transition-delay: 0ms; }
+  .stagger-children > *:nth-child(2) { transition-delay: 100ms; }
+  .stagger-children > *:nth-child(3) { transition-delay: 200ms; }
+  .stagger-children > *:nth-child(4) { transition-delay: 300ms; }
+  .stagger-children > *:nth-child(5) { transition-delay: 400ms; }
 }

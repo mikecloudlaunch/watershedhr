@@ -39,3 +39,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Planning and development docs
+roadmap.md
+ROADMAP.md
+/docs/planning/
+/planning/
+*.wireframe.jsx
+*_wireframe.jsx
+todo.md
+TODO.md
+notes.md
+NOTES.md
