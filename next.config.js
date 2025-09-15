@@ -20,32 +20,12 @@ const nextConfig = {
   // Performance optimizations
   compress: true,
   
-  // Enable experimental features for better performance
-  experimental: {
-    optimizeCss: true,
-  },
-  
-  // Security headers
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin',
-          },
-        ],
-      },
-    ];
+  // ESLint configuration
+  eslint: {
+    // Only run ESLint on these directories during production builds
+    dirs: ['src'],
+    // Don't fail the build on ESLint warnings (only errors)
+    ignoreDuringBuilds: false,
   },
 }
 
